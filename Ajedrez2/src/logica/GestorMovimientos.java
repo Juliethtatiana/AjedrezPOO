@@ -114,8 +114,6 @@ public class GestorMovimientos {
         }
         
     }
-    public void matarFicha(){
-    
-    }
+   
     
 }

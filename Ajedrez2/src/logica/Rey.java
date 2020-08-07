@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Rey extends Ficha{
 
     private boolean primerMov = false;
+    private boolean jaque=false;
     
     public Rey(String color) {
         super(color,'K');
