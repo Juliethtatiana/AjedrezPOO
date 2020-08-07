@@ -15,32 +15,31 @@ import java.util.ArrayList;
 public class Tablero {
     public  char tablero[][]; //tablero de chars para imprimir en consola
     public Ficha tableroFichas[][]; //tablero de fichas para saber como estan organizadas en el tablero
-    private ArrayList<Ficha> fichasblancas;
-    private ArrayList<Ficha> fichasnegras;
+    private Jugador jugadores[];
     
-    
-    public Tablero(ArrayList<Ficha> fichasblancas, ArrayList<Ficha> fichasnegras){
-        this.fichasblancas= fichasblancas;
-        this.fichasnegras = fichasnegras;
+    public Tablero(){
+        jugadores = new Jugador[2];
+        jugadores[0]= new Jugador(true,"blanco");
+        jugadores[1]= new Jugador(false,"negro");
         PonerFichas();
     }
     public void PonerFichas(){
         tablero = new char[8][8];
         tableroFichas = new Ficha[8][8];
         int aux=15;
-        ArrayList<Ficha> ficha= this.fichasblancas;
+        ArrayList<Ficha> fichas= this.jugadores[0].getFichas();
         for(int i=0; i<8; i++){
             for(int j=0; j<8; j++){
                if(i>5){
-                    tablero[i][j]= ficha.get(aux).getTipo();
-                    ficha.get(aux).setCoordenada(new Point(i, j));
-                    tableroFichas[i][j]= ficha.get(aux);
+                    tablero[i][j]= fichas.get(aux).getTipo();
+                    fichas.get(aux).setCoordenada(new Point(i, j));
+                    tableroFichas[i][j]= fichas.get(aux);
                     aux++;
                   
                }else{
-                   tablero[i][j]= ficha.get(aux).getTipo();
-                   ficha.get(aux).setCoordenada(new Point(i, j));
-                   tableroFichas[i][j]= ficha.get(aux);
+                   tablero[i][j]= fichas.get(aux).getTipo();
+                   fichas.get(aux).setCoordenada(new Point(i, j));
+                   tableroFichas[i][j]= fichas.get(aux);
                    aux--;
                }
                
@@ -48,7 +47,7 @@ public class Tablero {
             }
             if(i==1){
                 i=5;
-                ficha=this.fichasnegras;
+                fichas=this.jugadores[1].getFichas();
                 aux=0;
             }
         }
@@ -64,20 +63,34 @@ public class Tablero {
             System.out.println("|");
         }
     }
-    public void moverFicha(Jugador jugador,Point ini,Point destino){
+    public void moverFicha(int jugador,Point ini,Point destino){
         System.out.println("la ficha que se va a mover es: "+tableroFichas[ini.x][ini.y].getTipo());
                 
-                tableroFichas[ini.x][ini.y].posiblesMovimientos(jugador, this);
-                tableroFichas[ini.x][ini.y].imprimirPosMov();
-                
-                tableroFichas[ini.x][ini.y].setCoordenada(destino);
-                tableroFichas[destino.x][destino.y]=  tableroFichas[ini.x][ini.y];
-                tableroFichas[ini.x][ini.y]=null;
-                System.out.println(" -------------------");
-                tablero[ini.x][ini.y]=' ';
+                 ArrayList<Point> pm = tableroFichas[ini.x][ini.y].posiblesMovimientos(this);
+                if(pm.isEmpty()){
+                    System.err.println("ESTA FICHA NO  SE PUEDE MOVER");
+                }else{
+                    if(pm.contains(destino)){
+                        tableroFichas[ini.x][ini.y].setCoordenada(destino);
+                        tableroFichas[destino.x][destino.y]=  tableroFichas[ini.x][ini.y];
+                        tableroFichas[ini.x][ini.y]=null;
+                        System.out.println(" -------------------");
+                        tablero[ini.x][ini.y]=' ';
                
-                tablero[destino.x][destino.y]=tableroFichas[destino.x][destino.y].getTipo();
+                        tablero[destino.x][destino.y]=tableroFichas[destino.x][destino.y].getTipo();
+                    }else{
+                        System.err.println("MOVIMIENTO  NO PERMITIDO");
+                    }
+                
             
+                }
+                
+                
+    }
+    public void calcularPosMov(int  jugador,Point pos){  
+        tableroFichas[pos.x][pos.y].posiblesMovimientos(this);
+        System.out.println("Los posibles movimientos que puedes hacer con la ficha: "+ tableroFichas[pos.x][pos.y].getTipo()+ " de color :"+tableroFichas[pos.x][pos.y].getColor()+" son: ");
+        tableroFichas[pos.x][pos.y].imprimirPosMov();
     }
     public char[][] getTablero() {
         return tablero;

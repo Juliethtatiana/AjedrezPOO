@@ -16,7 +16,8 @@ public abstract class Ficha implements Animable{
     char tipo;
     String color;
     Point coordenada;
-    ArrayList<Point> pm;  //arraylist de posibles movimientos
+    ArrayList<Point> pm;//arraylist de posibles movimientos
+    ArrayList<String> animaciones; //array list de las rutas de los archivos que  tienen la animacion de cada ficha
     boolean vivo;
     
 public Ficha(String color, char tipo) {
@@ -53,7 +54,7 @@ public void mover(Point nuevo){
         this.setCoordenada(nuevo);
         //TODO: si esta posición esta ocupada, entonces capturar y realizar animación
 }
-public abstract ArrayList<Point> posiblesMovimientos(Jugador jugador, Tablero tablero);
+public abstract ArrayList<Point> posiblesMovimientos(Tablero tablero);
 
 
 }

@@ -21,7 +21,7 @@ public class Torre extends Ficha{
 
 
     @Override
-    public ArrayList<Point> posiblesMovimientos(Jugador jugador, Tablero tablero) {
+    public ArrayList<Point> posiblesMovimientos(Tablero tablero) {
         pm.clear();
         /*
         COMO LOS ALFILES VAN EN TODAS LAS DIRECCIONES NO ES NECESARIO CAMBIAR LOS MÃ‰TODOS SEGUN SU COLOR
@@ -129,6 +129,16 @@ public class Torre extends Ficha{
                 }
             }  
         return pm;
+    }
+
+    @Override
+    public void EjecutaranimacionMatar(String file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void EjecutaranimacionMover(String file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

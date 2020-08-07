@@ -23,7 +23,7 @@ public class Rey extends Ficha{
  
 
     @Override
-    public ArrayList<Point> posiblesMovimientos(Jugador jugador, Tablero tablero) {
+    public ArrayList<Point> posiblesMovimientos(Tablero tablero) {
         pm.clear();
         // SE SUPONE QUE LAS BLANCAS VAN DE ABAJO HACIA ARRIBA
 
@@ -105,6 +105,16 @@ public class Rey extends Ficha{
             } 
         }
         return pm;
+    }
+
+    @Override
+    public void EjecutaranimacionMatar(String file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void EjecutaranimacionMover(String file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

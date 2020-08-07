@@ -19,7 +19,7 @@ public class Peon extends Ficha{
     }
 
     @Override
-    public ArrayList<Point> posiblesMovimientos(Jugador jugador, Tablero tablero) {
+    public ArrayList<Point> posiblesMovimientos(Tablero tablero) {
          pm.clear();
           // SE SUPONE QUE LAS BLANCAS VAN DE ABAJO HACIA ARRIBA
         if(color=="blanco"){
@@ -64,12 +64,12 @@ public class Peon extends Ficha{
             // verifica si hay un aliado en la casilla siguiente
             // si esta no puede moverse alli
             if(coordenada.x<7){
-                                System.out.println("entro 1");
+                               // System.out.println("entro 1");
                 if(!tablero.preguntarAliado(new Point(coordenada.x+1,coordenada.y), color)){
-                                                        System.out.println("entro 2");
+                                                     //   System.out.println("entro 2");
 
                     if(!tablero.preguntar(new Point(coordenada.x+1,coordenada.y), color)){
-                                                                 System.out.println("entro 3");
+                                                       //          System.out.println("entro 3");
 
                         pm.add(new Point(coordenada.x+1,coordenada.y));
                     }
@@ -160,5 +160,15 @@ public class Peon extends Ficha{
             
         }
         return pm;
+    }
+
+    @Override
+    public void EjecutaranimacionMatar(String file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void EjecutaranimacionMover(String file) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
