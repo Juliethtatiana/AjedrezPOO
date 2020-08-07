@@ -6,7 +6,7 @@ import java.awt.Point;
 
 public class Ajedrez {
 
-    public Tablero tablero;
+    private Tablero tablero;
     private Jugador jugadores[];
     private GestorMovimientos gestor;
     public Ajedrez(){
@@ -32,4 +32,9 @@ public class Ajedrez {
        
        gestor.calcularPosMov(0, new Point(x, y));
     }
+
+    public Tablero getTablero() {
+        return tablero;
+    }
+    
 }

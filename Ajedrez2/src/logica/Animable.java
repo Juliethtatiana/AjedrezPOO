@@ -5,8 +5,6 @@
  */
 package logica;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Admin
@@ -15,4 +13,5 @@ public interface Animable {
      
     public void EjecutaranimacionMatar(String file);
     public void EjecutaranimacionMover(String file);
+
 }
