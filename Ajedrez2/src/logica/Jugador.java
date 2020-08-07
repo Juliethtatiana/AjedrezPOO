@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class Jugador {
     private ArrayList<Ficha> fichas;
+    private ArrayList<Ficha> fichasMuertas;
     private boolean turno;
     private  String color;
     
@@ -29,6 +30,7 @@ public class Jugador {
 
     private void crearFichas(){
         fichas = new ArrayList<Ficha>();
+        fichasMuertas = new ArrayList<Ficha>();
         int i=0;
         for(i=0; i<8;i++){
             Peon peon = new Peon(this.color);
@@ -65,7 +67,12 @@ public class Jugador {
       
         
     }
-
+    public void AnadirFichaMuerta( Ficha  ficha){
+        
+        fichasMuertas.add(ficha);
+        fichas.remove(ficha);
+        
+    }
     public void setTurno(boolean turno) {
         this.turno = turno;
     }

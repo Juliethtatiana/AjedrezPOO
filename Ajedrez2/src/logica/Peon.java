@@ -30,7 +30,7 @@ public class Peon extends Ficha{
                         if(!tablero.preguntar(new Point(coordenada.x+2,coordenada.y), color)){
                             if(!tablero.preguntar(new Point(coordenada.x+1,coordenada.y), color)){
                                 pm.add(new Point(coordenada.x+2,coordenada.y));
-                                primerMov=true;
+                                
                             }
                          // se habilita el primer movimento de dos casillas si no hay alidos u enemigos alli                       
                         }
@@ -102,7 +102,7 @@ public class Peon extends Ficha{
                         if(!tablero.preguntar(new Point(coordenada.x-2,coordenada.y), color)){
                             if(!tablero.preguntar(new Point(coordenada.x-1,coordenada.y), color)){
                                 pm.add(new Point(coordenada.x-2,coordenada.y));
-                                primerMov=true;
+                               
                             }
                          // se habilita el primer movimento de dos casillas si no hay alidos u enemigos alli                       
                         }
@@ -162,6 +162,9 @@ public class Peon extends Ficha{
         return pm;
     }
 
+
+    
+
     @Override
     public void EjecutaranimacionMatar(String file) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -170,5 +173,10 @@ public class Peon extends Ficha{
     @Override
     public void EjecutaranimacionMover(String file) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setPrimerMov() {
+        this.primerMov=true;
     }
 }

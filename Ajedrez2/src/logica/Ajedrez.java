@@ -39,4 +39,8 @@ public class Ajedrez {
 //       
 //       gestor.calcularPosMov(0, new Point(x, y));
 //    }
+
+    public Jugador[] getJugadores() {
+        return jugadores;
+    }
 }

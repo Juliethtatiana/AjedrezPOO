@@ -84,4 +84,9 @@ public class Caballo extends Ficha {
     public void EjecutaranimacionMover(String file) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void setPrimerMov() {
+        
+    }
 }

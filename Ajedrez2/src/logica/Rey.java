@@ -20,7 +20,10 @@ public class Rey extends Ficha{
         super(color,'K');
     }
 
- 
+  public void setCoordenada(Point coordenada) {
+        this.coordenada = coordenada;
+        primerMov = true;
+    }
 
     @Override
     public ArrayList<Point> posiblesMovimientos(Tablero tablero) {
@@ -115,6 +118,11 @@ public class Rey extends Ficha{
     @Override
     public void EjecutaranimacionMover(String file) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setPrimerMov() {
+        this.primerMov =true;
     }
     
 }

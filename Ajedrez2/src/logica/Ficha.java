@@ -55,6 +55,6 @@ public void mover(Point nuevo){
         //TODO: si esta posición esta ocupada, entonces capturar y realizar animación
 }
 public abstract ArrayList<Point> posiblesMovimientos(Tablero tablero);
-
+public abstract void setPrimerMov();
 
 }
