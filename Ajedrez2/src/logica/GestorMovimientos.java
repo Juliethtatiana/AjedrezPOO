@@ -43,6 +43,7 @@ public class GestorMovimientos {
                         ajedrez.tablero.tablero[ini.x][ini.y]=' ';
                
                         ajedrez.tablero.tablero[destino.x][destino.y]=ajedrez.tablero.tableroFichas[destino.x][destino.y].getTipo();
+                        numJugadas++;
                         turno=false;
                         ajedrez.tablero.imprimirTablero();
                         System.out.print("***TURNO  CAMBIADO A  FICHAS NEGRAS**");
@@ -71,6 +72,7 @@ public class GestorMovimientos {
                
                         ajedrez.tablero.tablero[destino.x][destino.y]=ajedrez.tablero.tableroFichas[destino.x][destino.y].getTipo();
                         ajedrez.tablero.imprimirTablero();
+                        numJugadas++;
                          turno=true;
                          System.out.print("***TURNO  CAMBIADO A  FICHAS BLANCAS**");
                     }else{
@@ -81,7 +83,7 @@ public class GestorMovimientos {
                 }
                
             }  
-              System.out.println("##Movimiento incorrecto  intente de nuevo##");
+              System.out.println("##Movimiento incorrecto  intente de nuevo ##");
         }
        
                 
