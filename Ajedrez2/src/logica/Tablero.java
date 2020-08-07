@@ -15,19 +15,18 @@ import java.util.ArrayList;
 public class Tablero {
     public  char tablero[][]; //tablero de chars para imprimir en consola
     public Ficha tableroFichas[][]; //tablero de fichas para saber como estan organizadas en el tablero
-    private Jugador jugadores[];
-    
-    public Tablero(){
-        jugadores = new Jugador[2];
-        jugadores[0]= new Jugador(true,"blanco");
-        jugadores[1]= new Jugador(false,"negro");
+    ArrayList<Ficha> fichasblancas;
+    ArrayList<Ficha> fichasnegras;
+    public Tablero(Jugador player1, Jugador player2){
+        fichasblancas = player1.getFichas();
+        fichasnegras = player2.getFichas();
         PonerFichas();
     }
     public void PonerFichas(){
         tablero = new char[8][8];
         tableroFichas = new Ficha[8][8];
         int aux=15;
-        ArrayList<Ficha> fichas= this.jugadores[0].getFichas();
+        ArrayList<Ficha> fichas= this.fichasblancas;
         for(int i=0; i<8; i++){
             for(int j=0; j<8; j++){
                if(i>5){
@@ -47,7 +46,7 @@ public class Tablero {
             }
             if(i==1){
                 i=5;
-                fichas=this.jugadores[1].getFichas();
+                fichas=this.fichasnegras;
                 aux=0;
             }
         }

@@ -22,7 +22,7 @@ public class Launcher {
         //el primer parametro hace referencia al jugador de las fichas negras
         //NOTA: si son fichas negras se pasan las coordenadas de la parte de arriba, si son fichas blancas se toma como referecia la torre de fichas blancas pos(6,0)
         //ajedrez.calcularPosMov(1, 4);//PARA SABER EN EL TABLERO A QUE POSICIONES SE PUEDE MOVER LA  FICHA
-         ajedrez.hacerMovimiento(0, 1, 4,3,4);  //PARA MOVER LA  FICHA 
+         ajedrez.hacerMovimiento(0, 1, 5,2,5);  //PARA MOVER LA  FICHA 
          ajedrez.hacerMovimiento(0, 7, 5,2,0);
         //ajedrez.hacerMovimiento(0, 0, 3,1,4);
        // ajedrez.hacerMovimiento(0, 1, 4,2,5);

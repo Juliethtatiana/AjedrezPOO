@@ -60,9 +60,9 @@ public class Alfil extends Ficha{
             //---------------------SE DIRIGE A LA ESQUINA SUPERIOR IZQUIERDA
             //se le suma a y y resta a x
             for(int i =1 ; i<8;i++){
-                System.out.println("llegamos");
+                //System.out.println("llegamos");
                 if(coordenada.x-i>=0 && coordenada.y+i<=7){
-                    System.out.println("se llego");
+                    //System.out.println("se llego");
                    // no hay ninguna ficha aliada en la posiciÃ³n  (devuelve true si hay alguna ficha ahÃ­)                     
                     if(!tablero.preguntarAliado(new Point(coordenada.x-i,coordenada.y+i),color)){
                         //si no hay ninguna fihca enemiga en la posiciÃ³n
