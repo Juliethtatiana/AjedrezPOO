@@ -24,9 +24,9 @@ public class GestorMovimientos {
     
   
     
-     public void moverFicha(int jugador,Point ini,Point destino){
+     public void moverFicha(Jugador jugador,Point ini,Point destino){
          //System.out.print(ajedrez.tablero.tableroFichas[ini.x][ini.y].getColor());
-          if(turno && ajedrez.tablero.tableroFichas[ini.x][ini.y].getColor() == "blanco"){
+          if(turno && jugador.getFichas().contains(ajedrez.tablero.tableroFichas[ini.x][ini.y])){
              System.out.println("la ficha que se va a mover es: "+ajedrez.tablero.tableroFichas[ini.x][ini.y].getTipo());
                 
                  ArrayList<Point> pm = ajedrez.tablero.tableroFichas[ini.x][ini.y].posiblesMovimientos( ajedrez.tablero);
@@ -55,7 +55,7 @@ public class GestorMovimientos {
                 }
              
         }else{
-            if(ajedrez.tablero.tableroFichas[ini.x][ini.y].getColor() == "negro"){
+            if(jugador.getFichas().contains(ajedrez.tablero.tableroFichas[ini.x][ini.y])){
                  System.out.println("la ficha que se va a mover es: "+ajedrez.tablero.tableroFichas[ini.x][ini.y].getTipo());
                 
                  ArrayList<Point> pm = ajedrez.tablero.tableroFichas[ini.x][ini.y].posiblesMovimientos( ajedrez.tablero);

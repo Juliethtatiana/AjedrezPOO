@@ -23,7 +23,7 @@ public class Ajedrez {
         gestor= new GestorMovimientos(this);
     }
     public void hacerMovimiento(int jugador, int x1, int y1,int x2, int y2){
-        gestor.moverFicha(jugador,new Point(x1, y1),new Point(x2, y2));
+        gestor.moverFicha(jugadores[jugador],new Point(x1, y1),new Point(x2, y2));
         //tablero.moverFicha(jugador,new Point(x1, y1),new Point(x2, y2));
         
     }
