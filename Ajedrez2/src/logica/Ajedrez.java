@@ -30,6 +30,7 @@ public class Ajedrez {
         tablero.imprimirTablero();
         
     }
+    
     public void calcularPosMov(int x, int y){
        int tipoFicha = tablero.getTablero()[x][y];
        

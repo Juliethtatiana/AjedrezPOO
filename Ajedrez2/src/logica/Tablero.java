@@ -55,7 +55,7 @@ public class Tablero {
         
     }
     public void imprimirTablero(){
-        for (int x=0; x < tablero.length; x++) {
+        for (int x= tablero.length-1; x>=0; x--) {
             System.out.print("|");
             for (int y=0; y < tablero[x].length; y++) {
                 System.out.print (tablero[x][y]);
@@ -67,7 +67,7 @@ public class Tablero {
     public void moverFicha(Jugador jugador,Point ini,Point destino){
         System.out.println("la ficha que se va a mover es: "+tableroFichas[ini.x][ini.y].getTipo());
                 
-                tableroFichas[ini.x][ini.y].posiblesMovimientos(jugador);
+                tableroFichas[ini.x][ini.y].posiblesMovimientos(jugador, this);
                 tableroFichas[ini.x][ini.y].imprimirPosMov();
                 
                 tableroFichas[ini.x][ini.y].setCoordenada(destino);
@@ -82,5 +82,53 @@ public class Tablero {
     public char[][] getTablero() {
         return tablero;
     }
+    //-----------------------FUNCIONES NECESARIAS-------------------------------------
+    // FUNCIÃ“N NECESARIA PARA CALCULAR MOVIMIIENTOS
+    public boolean preguntarAliado(Point pVerifiar, String color) {
+            // verifica si exite otra ficha del equipo contrario en esa posiciÃ³n.
+            if(tableroFichas[pVerifiar.x][pVerifiar.y]==null ){
+                // false es que no hay nada
+                return false;
+            }else{
+                if(color=="blanco"){
+                 if(tableroFichas[pVerifiar.x][pVerifiar.y]==null && tableroFichas[pVerifiar.x][pVerifiar.y].getColor()=="negro")
+                return false;
+             }else{
+                if(color=="negro"){
+                    if(tableroFichas[pVerifiar.x][pVerifiar.y]==null && tableroFichas[pVerifiar.x][pVerifiar.y].getColor()=="blanco")
+                    return false;
+                    
+                }
+                return true;
+                }
+                
+            }
+            return true;
+           }
+            
+        
     
+
+    // FUNCIÃ“N NECESARIA PARA CALULAR MOVIMIENTOS
+    //verifica si en la posiciÃ³n indicada se encuentra una ficha del equipo contrario
+    public boolean preguntar(Point pVerifiar, String color ){
+           if(color=="blanco"){
+            // verifica si exite otra ficha del equipo contrario en esa posiciÃ³n.
+            if(tableroFichas[pVerifiar.x][pVerifiar.y]==null){
+                // false es que no hay nada
+                return false;
+            }else{
+                return true;
+            }
+        }else{
+            // verifica si exite otra ficha del equipo contrario en esa posiciÃ³n.
+            if(tableroFichas[pVerifiar.x][pVerifiar.y]==null){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    
+    }
+
 }

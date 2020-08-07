@@ -20,7 +20,7 @@ public class Caballo extends Ficha{
     }
 
     @Override
-    public ArrayList<Point> posiblesMovimientos(Jugador jugador) {
+    public ArrayList<Point> posiblesMovimientos(Jugador jugador, Tablero tablero) {
         pm.clear();
         Point posAux= coordenada;
         

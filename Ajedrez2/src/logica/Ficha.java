@@ -12,11 +12,11 @@ import java.util.ArrayList;
  *
  * @author Tatiana
  */
-public abstract class Ficha {
+public abstract class Ficha implements Animable{
     char tipo;
     String color;
     Point coordenada;
-    ArrayList<Point> pm;
+    ArrayList<Point> pm;  //arraylist de posibles movimientos
     boolean vivo;
     
 public Ficha(String color, char tipo) {
@@ -53,7 +53,7 @@ public void mover(Point nuevo){
         this.setCoordenada(nuevo);
         //TODO: si esta posición esta ocupada, entonces capturar y realizar animación
 }
-public abstract ArrayList<Point> posiblesMovimientos(Jugador jugador);
+public abstract ArrayList<Point> posiblesMovimientos(Jugador jugador, Tablero tablero);
 
 
 }

@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Ficha.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Alfil.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Ficha.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Caballo.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Tablero.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Torre.java</file>
             <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Ajedrez.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/Launcher.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Peon.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Rey.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/AjedrezPOO/Ajedrez2/src/logica/Reina.java</file>
         </group>
     </open-files>
 </project-private>

@@ -21,7 +21,10 @@ public class Launcher {
         //metodo que recibe como parametros (posicion del arreglo de jugadores que hay en ajedrez, y inicio, x inicio, y final, x final)
         //el primer parametro hace referencia al jugador de las fichas negras
         //NOTA: si son fichas negras se pasan las coordenadas de la parte de arriba, si son fichas blancas se toma como referecia la torre de fichas blancas pos(6,0)
-        ajedrez.hacerMovimiento(0, 6, 0,2,1);
+       ajedrez.hacerMovimiento(0, 6, 4,4,4);
+       ajedrez.hacerMovimiento(0, 7, 5,2,0);
+        //ajedrez.hacerMovimiento(0, 0, 3,1,4);
+       // ajedrez.hacerMovimiento(0, 1, 4,2,5);
     }
 
 }
