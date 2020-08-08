@@ -56,12 +56,12 @@ public class Tablero {
     }
     public void imprimirTablero(){
         for (int x= tablero.length-1; x>=0; x--) {
-            System.out.print("|");
+            System.out.print("||");
             for (int y=0; y < tablero[x].length; y++) {
                 System.out.print (tablero[x][y]);
                 if (y!=tablero[x].length-1) System.out.print("\t");
             }
-            System.out.println("|");
+            System.out.println("||");
         }
     }
     public void moverFicha(int jugador,Point ini,Point destino){

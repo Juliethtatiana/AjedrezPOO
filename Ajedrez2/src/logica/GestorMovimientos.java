@@ -38,7 +38,7 @@ public class GestorMovimientos {
                     
                 }else{
                     if(pm.contains(destino)){
-                        if(ajedrez.tablero.tableroFichas[destino.x][destino.y]!=null && ajedrez.tablero.tableroFichas[destino.x][destino.y].getColor()=="negro"){
+                        if(ajedrez.tablero.tableroFichas[destino.x][destino.y]!=null && "negro".equals(ajedrez.tablero.tableroFichas[destino.x][destino.y].getColor())){
                             System.out.println("MATAR FICHA COLOR NEGRO");
                             ajedrez.getJugadores()[1].AnadirFichaMuerta( ajedrez.tablero.tableroFichas[destino.x][destino.y]);
                         }
@@ -72,7 +72,7 @@ public class GestorMovimientos {
                 }else{
                     
                     if(pm.contains(destino)){
-                        if(ajedrez.tablero.tableroFichas[destino.x][destino.y]!=null && ajedrez.tablero.tableroFichas[destino.x][destino.y].getColor()=="blanco"){
+                        if(ajedrez.tablero.tableroFichas[destino.x][destino.y]!=null && "blanco".equals(ajedrez.tablero.tableroFichas[destino.x][destino.y].getColor())){
                             System.out.println("MATAR FICHA COLOR BLANCO");
                             ajedrez.getJugadores()[0].AnadirFichaMuerta( ajedrez.tablero.tableroFichas[destino.x][destino.y]);
                         }

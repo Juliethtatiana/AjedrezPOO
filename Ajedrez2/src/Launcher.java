@@ -38,7 +38,7 @@ public class Launcher {
 
             System.out.println("Usted ingreso: " + posx + " "+ posy);
            if(ajedrez.CalcularMovimiento(jugador, posx, posy)){
-                System.out.print("Ingrese la posicion del movimiento: ");
+            System.out.print("Ingrese la posicion del movimiento: ");
             int posx1 = input.nextInt();
             int posy1 = input.nextInt();   
             System.out.println("Usted ingreso: " + posx1 + " "+ posy1);
@@ -64,9 +64,9 @@ public class Launcher {
             int posy1 = input.nextInt();   
             System.out.println("Usted ingreso: " + posx1 + " "+ posy1);
             
-            ajedrez.hacerMovimiento(jugador, posx, posy, posx1, posy1);
-            
+            if(ajedrez.hacerMovimiento(jugador, posx, posy, posx1, posy1)){
             jugador = 0;
+            }
            }
            
             }

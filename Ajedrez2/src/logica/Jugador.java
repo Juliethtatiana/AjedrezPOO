@@ -32,7 +32,7 @@ public class Jugador {
         fichas = new ArrayList<Ficha>();
         fichasMuertas = new ArrayList<Ficha>();
         int i=0;
-        for(i=0; i<8;i++){
+        for(int j=0; j<8;j++){
             Peon peon = new Peon(this.color);
             fichas.add(peon);
         }

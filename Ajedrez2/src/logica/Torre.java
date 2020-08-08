@@ -42,14 +42,14 @@ public class Torre extends Ficha{
             for(int i =1 ; i<8;i++){
                 if(coordenada.x+i<=7){
                    // no hay ninguna ficha aliada en la posiciÃ³n  (devuelve true si hay alguna ficha ahÃ­)                     
-                    if(!tablero.preguntarAliado(new Point(coordenada.x+i,coordenada.y),this.color)){
+                    if(!tablero.preguntarAliado(new Point(coordenada.x+i,coordenada.y),color)){
                         //si no hay ninguna fihca enemiga en la posiciÃ³n
-                        if(!tablero.preguntar(new Point(coordenada.x+i,coordenada.y),this.color )){
+                        if(!tablero.preguntar(new Point(coordenada.x+i,coordenada.y),color )){
                                 pm.add(new Point(coordenada.x+i,coordenada.y));
                         }else{
                             // hay un enemigo ahÃ­, se aÃ±ade la posiciÃ³n y termina el bucle.
                                 pm.add(new Point(coordenada.x+i,coordenada.y));
-                                break;
+                           
                         }
                     }else{
                         break;
@@ -66,14 +66,13 @@ public class Torre extends Ficha{
             for(int i =1 ; i<8;i++){
                 if(coordenada.x-i>=0){
                    // no hay ninguna ficha aliada en la posiciÃ³n  (devuelve true si hay alguna ficha ahÃ­)                     
-                    if(!tablero.preguntarAliado(new Point(coordenada.x-i,coordenada.y),this.color)){
+                    if(!tablero.preguntarAliado(new Point(coordenada.x-i,coordenada.y),color)){
                         //si no hay ninguna fihca enemiga en la posiciÃ³n
                         if(!tablero.preguntar(new Point(coordenada.x-i,coordenada.y),color )){
                                 pm.add(new Point(coordenada.x-i,coordenada.y));
                         }else{
                             // hay un enemigo ahÃ­, se aÃ±ade la posiciÃ³n y termina el bucle.
-                                pm.add(new Point(coordenada.x-i,coordenada.y));
-                                break;
+                                pm.add(new Point(coordenada.x-i,coordenada.y));       
                         }
                     }else{
                         break;
@@ -95,7 +94,7 @@ public class Torre extends Ficha{
                         }else{
                             // hay un enemigo ahÃ­, se aÃ±ade la posiciÃ³n y termina el bucle.
                                 pm.add(new Point(coordenada.x,coordenada.y-i));
-                                break;
+                               
                         }
                     }else{
                         break;
@@ -119,7 +118,7 @@ public class Torre extends Ficha{
                     }else{
                         // hay un enemigo ahÃ­, se aÃ±ade la posiciÃ³n y termina el bucle.
                             pm.add(new Point(coordenada.x,coordenada.y+i));
-                            break;
+                            
                     }
                     }else{
                         break;
@@ -127,6 +126,7 @@ public class Torre extends Ficha{
                 }else{
                     break;
                 }
+               
             }  
         return pm;
     }
